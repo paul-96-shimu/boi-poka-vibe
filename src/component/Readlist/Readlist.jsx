@@ -15,7 +15,7 @@ const Readlist = () => {
     useEffect(() => {
         if (!data) return;
         const storeBook = getStoreBook();
-        const convertedId = storeBook.map(book => parseInt(book));
+        const convertedId = storeBook.map(id => parseInt(id));
         const savedBook = data.filter(book => convertedId.includes(book.bookId));
 
         setReadlist(savedBook);
@@ -31,10 +31,10 @@ const Readlist = () => {
     return (
         <div>
             <details className="dropdown">
-                <summary className="btn m-1">sortBy:{sort ? sort : ""}</summary>
+                <summary className="btn m-1">sort By:{sort ? sort : ""}</summary>
                 <ul className="menu dropdown-content bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
-                    <li><a onClick={() => handleSort("Item 1")}>Item 1</a></li>
-                    <li><a onClick={() => handleSort("Item 1")}>Item 2</a></li>
+                    <li><a onClick={() => handleSort("pages")}>Pages</a></li>
+                    <li><a onClick={() => handleSort("rating")}>Rating</a></li>
                 </ul>
             </details>
             <Tabs>

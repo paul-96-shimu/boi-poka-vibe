@@ -19,7 +19,7 @@ const addToDB = (id) => {
         const data = JSON.stringify(storeBook);
         localStorage.setItem('storeBook', data);
     }
-    localStorage.setItem('storeBook', JSON.stringify(storeBook));
+    // localStorage.setItem('storeBook', JSON.stringify(storeBook));
 
 
 }
